@@ -145,7 +145,7 @@ footer {
 	background-color: var(--primarycolor);
 	border: 1px solid var(--primarycolor);
 	text-align: left;
-	padding: 0 1rem;
+	padding: 1rem;
 }
 
 .country img {
@@ -161,6 +161,11 @@ footer {
 }
 .title {
 	display: flex;
+	width: 100%;
+	padding: 1rem;
+}
+.text > p {
+	margin: 0.5rem 0;
 }
 li {
 	list-style: none;
@@ -172,6 +177,9 @@ li {
 
 .main {
 	width: 100%;
+	background-color: var(--maincolor);
+	padding: 1rem;
+	border-radius: 0.5rem;
 }
 
 .main > ul {

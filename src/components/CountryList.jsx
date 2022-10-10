@@ -1,42 +1,36 @@
 import { useContext } from 'react';
 import CountryContext from '../context/CountryContext';
 function CountryList() {
-	const { country, loading } = useContext(CountryContext);
+	const { text, country, loading } = useContext(CountryContext);
 
 	if (!loading & (country.length > 0)) {
-		// console.log(country);
+		console.log(country[0]);
+		console.log(text);
 		return (
 			<div className="country">
-				<img src="https://flagcdn.com/np.svg" className="flag" alt="Flag" />
+				<img src={country[0].flags.svg} className="flag" alt="Flag" />
 				<div className="title">
 					<div className="text">
-						<p>Nepal</p>
-						<p>Official Name: Federal Democratic Republic of Nepal</p>
-						<p>Capital: {country[0].capital}</p>
+						<p>Country: {country[0].name.common}</p>
+						<p>Official Name: {country[0].name.official}</p>
 					</div>
 				</div>
 				<div className="main">
 					<ul>
 						<li className="coat">
 							Coat Of Arms
-							<img
-								src="https://mainfacts.com/media/images/coats_of_arms/np.png"
-								alt="Coat of Arms"
-							/>
+							<img src={country[0].coatOfArms.svg} alt="Coat of Arms" />
 						</li>
-						<li>Region: Asia</li>
-						<li>SubRegion: Southern Asia</li>
-						<li>Population: 29136808</li>
+						<li>Capital: {country[0].capital}</li>
+						<li>Region: {country[0].region}</li>
+						<li>SubRegion: {country[0].subregion}</li>
+						<li>Population: {country[0].population}</li>
 					</ul>
 				</div>
 			</div>
 		);
 	} else {
-		return (
-			<div>
-				<p>hello</p>
-			</div>
-		);
+		return <div></div>;
 	}
 }
 

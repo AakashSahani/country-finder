@@ -3,6 +3,7 @@ import { createContext, useState } from 'react';
 const CountryContext = createContext();
 
 export const CountryProvider = ({ children }) => {
+	const [text, setText] = useState('');
 	const [country, setCountry] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const getCountry = async function (text) {
@@ -20,7 +21,7 @@ export const CountryProvider = ({ children }) => {
 
 	return (
 		<CountryContext.Provider
-			value={{ loading, setLoading, getCountry, country }}
+			value={{ text, setText, loading, setLoading, getCountry, country }}
 		>
 			{children}
 		</CountryContext.Provider>

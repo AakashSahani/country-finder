@@ -2,8 +2,7 @@ import { useContext, useState } from 'react';
 import CountryContext from '../context/CountryContext';
 
 function CountrySearch() {
-	const [text, setText] = useState('');
-	const { getCountry, setLoading } = useContext(CountryContext);
+	const { text, setText, getCountry, setLoading } = useContext(CountryContext);
 	const handleChange = (e) => {
 		setText(e.target.value);
 	};
