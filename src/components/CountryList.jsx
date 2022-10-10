@@ -1,11 +1,9 @@
 import { useContext } from 'react';
 import CountryContext from '../context/CountryContext';
 function CountryList() {
-	const { text, country, loading } = useContext(CountryContext);
+	const { country, loading } = useContext(CountryContext);
 
 	if (!loading & (country.length > 0)) {
-		console.log(country[0]);
-		console.log(text);
 		return (
 			<div className="country">
 				<img src={country[0].flags.svg} className="flag" alt="Flag" />
