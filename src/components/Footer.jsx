@@ -6,13 +6,13 @@ function Footer() {
 			<p>Copyright &copy; 2022 All rights reserved</p>
 			<div class="socials">
 				<a href="/">
-					<FaGithub />
+					<FaGithub size={24} />
 				</a>
 				<a href="/">
-					<FaTwitter />
+					<FaTwitter size={24} />
 				</a>
 				<a href="/">
-					<FaInstagram />
+					<FaInstagram size={24} />
 				</a>
 			</div>
 		</footer>
