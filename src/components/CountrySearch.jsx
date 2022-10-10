@@ -1,19 +1,37 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import CountryContext from '../context/CountryContext';
 
 function CountrySearch() {
-	const { sayHello } = useContext(CountryContext);
-	const handleClick = () => {
-		console.log('I was clicked');
+	const [text, setText] = useState('');
+	const { getCountry, setLoading } = useContext(CountryContext);
+	const handleChange = (e) => {
+		setText(e.target.value);
+	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		if (text === '') {
+			console.log('Please enter something');
+		} else {
+			getCountry(text);
+			setText('');
+			setLoading(false);
+		}
 	};
 	return (
 		<div className="search">
-			<form>
-				<input type="text" name="country" id="country" />
+			<form onSubmit={handleSubmit}>
+				<input
+					type="text"
+					name="country"
+					id="country"
+					value={text}
+					onChange={handleChange}
+				/>
+				<button type="submit" className="btn">
+					Search
+				</button>
 			</form>
-			<button type="submit" className="btn" onClick={sayHello}>
-				Search
-			</button>
 		</div>
 	);
 }

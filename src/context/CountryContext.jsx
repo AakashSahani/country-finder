@@ -1,13 +1,28 @@
-import { createContext } from 'react';
+import { createContext, useState } from 'react';
 
 const CountryContext = createContext();
 
 export const CountryProvider = ({ children }) => {
-	const sayHello = () => {
-		console.log('Hello');
+	const [country, setCountry] = useState([]);
+	const [loading, setLoading] = useState(true);
+	const getCountry = async function (text) {
+		setLoading();
+		await fetch(`https://restcountries.com/v3.1/name/${text}`)
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+				// setLoading(false);
+				setCountry(data);
+			})
+			.catch((err) => {
+				console.log(err.message);
+			});
 	};
+
 	return (
-		<CountryContext.Provider value={{ sayHello }}>
+		<CountryContext.Provider
+			value={{ country, loading, setLoading, getCountry }}
+		>
 			{children}
 		</CountryContext.Provider>
 	);
