@@ -124,16 +124,13 @@ footer {
 	.socials {
 		margin-top: 1rem;
 	}
+	.country {
+		max-width: 90vw;
+	}
 }
 
 .socials > a {
 	margin-right: 0.5rem;
-}
-
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
 }
 
 .country {
@@ -143,14 +140,25 @@ footer {
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-evenly;
-	border: 1px solid black;
+	border-radius: 1rem;
+	box-shadow: 0 0 2px 0 var(--primarycolor);
+	background-color: var(--primarycolor);
+	border: 1px solid var(--primarycolor);
+	text-align: left;
+	padding: 0 1rem;
 }
 
-img {
+.country img {
 	width: 50px;
 	height: auto;
+	margin: 0 1rem;
 }
 
+.flag {
+	border-radius: 0;
+	width: 100%;
+	height: auto;
+}
 .title {
 	display: flex;
 }
@@ -158,8 +166,15 @@ li {
 	list-style: none;
 }
 
+.coat {
+	line-height: 2rem;
+}
+
+.main {
+	width: 100%;
+}
+
 .main > ul {
 	display: flex;
 	flex-direction: column;
-	justify-content: left;
 }

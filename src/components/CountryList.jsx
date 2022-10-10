@@ -7,7 +7,7 @@ function CountryList() {
 		// console.log(country);
 		return (
 			<div className="country">
-				<img src="https://flagcdn.com/np.svg" alt="Flag" />
+				<img src="https://flagcdn.com/np.svg" className="flag" alt="Flag" />
 				<div className="title">
 					<div className="text">
 						<p>Nepal</p>
@@ -17,7 +17,7 @@ function CountryList() {
 				</div>
 				<div className="main">
 					<ul>
-						<li>
+						<li className="coat">
 							Coat Of Arms
 							<img
 								src="https://mainfacts.com/media/images/coats_of_arms/np.png"
