@@ -111,10 +111,19 @@ footer {
 	position: absolute;
 	bottom: 0;
 	width: 100vw;
-	/* background-color: var(--accentcolor); */
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 2rem;
+}
+
+@media (max-width: 500px) {
+	footer {
+		flex-direction: column;
+		padding-bottom: 2rem;
+	}
+	.socials {
+		margin-top: 1rem;
+	}
 }
 
 .socials > a {
