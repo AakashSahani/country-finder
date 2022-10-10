@@ -10,8 +10,7 @@ export const CountryProvider = ({ children }) => {
 		await fetch(`https://restcountries.com/v3.1/name/${text}`)
 			.then((res) => res.json())
 			.then((data) => {
-				console.log(data);
-				// setLoading(false);
+				// console.log(data);
 				setCountry(data);
 			})
 			.catch((err) => {
@@ -21,7 +20,7 @@ export const CountryProvider = ({ children }) => {
 
 	return (
 		<CountryContext.Provider
-			value={{ country, loading, setLoading, getCountry }}
+			value={{ loading, setLoading, getCountry, country }}
 		>
 			{children}
 		</CountryContext.Provider>
